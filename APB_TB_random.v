@@ -43,11 +43,11 @@ module tb_random_apbmain;
 		begin
 				prst = 0;
 				pwrite = 1;
-				for(i=0;i<3;i=i+1) begin
+				for(i=0;i<11;i=i+1) begin
 						
 						//paddressi =$urandom_range(0,10);
 						paddressi = i;
-						pdatai = i;//$urandom_range(5,10);
+						pdatai = i*5;//$urandom_range(5,10);
 						#20;
 				end
 		end
@@ -56,7 +56,7 @@ module tb_random_apbmain;
 		task get_data_from_slave();
 		begin
 				pwrite = 0;
-				for(i=0;i<3;i=i+1) begin
+				for(i=0;i<11;i=i+1) begin
 						paddressi = i;//$urandom_range(0,10);
 						#20;
 				end
